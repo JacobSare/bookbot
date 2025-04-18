@@ -15,7 +15,7 @@ def get_num_words(book):
     words = text.split()
     
     num_words = len(words)
-    print(f"{num_words} words found in the document")
+    print(f"Found {num_words} total words")
 
 pass
 
@@ -29,5 +29,24 @@ def get_num_chars(book):
             counted[i] = 1
         else:
             counted[i] += 1
-            
+
     return counted
+
+def get_book_report(book,char_list):
+
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    get_num_words(book)
+    print("--------- Character Count -------")
+
+    sd = sorted(char_list.items())
+    
+    for k,v in sd:
+       
+        if k.isalpha():
+            print (f"{k}: {v}")
+
+    print("============= END ===============")
+
+pass
